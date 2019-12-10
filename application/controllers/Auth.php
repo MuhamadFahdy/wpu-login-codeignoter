@@ -37,6 +37,7 @@ class Auth extends CI_Controller
             //usernya ada
             if($user['is_active'] == 1)
             {
+                
                 //jika usernya aktif
                 if(password_verify($password, $user['password']))
                 {
@@ -92,7 +93,7 @@ class Auth extends CI_Controller
            'name'=>htmlspecialchars($this->input->post('name',true)),
            'email'=>htmlspecialchars($this->input->post('email',true)),
            'image'=>'default.jpg',
-           'password'=>password_hash(htmlspecialchars($this->input->post('password')),PASSWORD_DEFAULT),
+           'password'=>password_hash(htmlspecialchars($this->input->post('password1')),PASSWORD_DEFAULT),
            'role_id'=>2,
            'is_active'=>1,
            'date_created'=> time()
